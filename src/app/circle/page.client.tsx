@@ -69,12 +69,12 @@ const Page: React.FC = () => {
           <StyledCardSection delay={delayCount++ / 10} title="イベント名">
             政剣マニフェスティアオンリー同人誌即売会
             <br />
-            緊急交流イベント「漕ぎ出せ！ソクバイ海Ⅶ」
+            緊急交流イベント「漕ぎ出せ！ソクバイ海Ⅷ」
             <br />
-            #アイムソウリー2024
+            #アイムソウリー2025
           </StyledCardSection>
           <StyledCardSection delay={delayCount++ / 10} title="日程・会場">
-            2024年9月15日（日曜日）
+            2025年9月14日（日曜日）
             <br />
             ハイライフプラザいたばし
           </StyledCardSection>
@@ -109,18 +109,20 @@ const Page: React.FC = () => {
                   <Table.Cell>【アフターイベント】開始</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell>18:00</Table.Cell>
-                  <Table.Cell>【更衣室】閉鎖</Table.Cell>
+                  <Table.Cell>16:30</Table.Cell>
+                  <Table.Cell>【アフターイベント】終了</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell>20:00</Table.Cell>
-                  <Table.Cell>【会場】完全撤収</Table.Cell>
+                  <Table.Cell>18:00</Table.Cell>
+                  <Table.Cell>
+                    【更衣室】閉鎖
+                    <br />
+                    【会場】完全撤収
+                  </Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table.Root>
             <br />
-            <br />
-            ※その他詳細スケジュールは後日お知らせします
             <br />
             ※スケジュールは変更になることがあります
           </StyledCardSection>
@@ -213,14 +215,14 @@ const Page: React.FC = () => {
             ※2スペース申込時の2スペース目のサークル参加チケットは、サークル追加入場チケットと同様、サークル主からメンバーにお渡しいただくことで、イベント当日の入場時にご利用いただけます。
           </StyledCardSection>
           <StyledCardSection delay={delayCount++ / 10} title="決済締切">
-            2024年8月4日（日曜日）&nbsp;23:59:59まで
+            2025年8月3日（日曜日）&nbsp;23:59:59まで
             <br />
             ※決済後のキャンセルはお受けできません。
           </StyledCardSection>
           <StyledCardSection delay={delayCount++ / 10} title="参加申込方法">
-            1.【8/4まで】LivePocketページから「サークル参加チケット」をご購入ください。
+            1.【8/3まで】LivePocketページから「サークル参加チケット」をご購入ください。
             <br />
-            2.【8/5まで】LivePocketページに記載された「サークル参加フォーム」からサークル情報をご登録ください。
+            2.【8/4まで】LivePocketページに記載された「サークル参加フォーム」からサークル情報をご登録ください。
           </StyledCardSection>
           <StyledCardSection
             delay={delayCount++ / 10}
@@ -241,7 +243,7 @@ const Page: React.FC = () => {
             delay={delayCount++ / 10}
             title="宅配便による搬入・搬出"
           >
-            ヤマト運輸の宅急便をご利用いただけます。
+            ヤマト運輸の宅急便をご利用いただけるようにする予定です。
             <br />
             伝票の記載例など、注意点は後日改めてご案内します。
           </StyledCardSection>
@@ -304,11 +306,7 @@ const Page: React.FC = () => {
         </Card>
         <Card title="サークル参加チケット販売">
           <Card.Section title="">
-            <AnchorLink
-              href="https://t.livepocket.jp/e/tabnvl"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <AnchorLink href="" target="_blank" rel="noreferrer">
               <Button as="span" colorScheme="blue">
                 LivePocket&nbsp;イベントページ(サークル参加者向け)
               </Button>
