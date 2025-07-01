@@ -65,38 +65,9 @@ const Page: React.FC = () => {
             <br />
             会場を政霊たちのイラストで華やかに飾りましょう！
             <br />
+            当日どうしても参加できない総理もぜひご参加ください。
             <br />
-            色紙応募条件
-            <br />
-            ・色紙に「2024/09/15 #アイムソウリー2024」と書く
-            <br />
-            ・政マニ関連の色紙である
-            <br />
-            ・色紙大きさ自由
-            <br />
-            ・モノクロ、カラーいずれも可
-            <br />
-            ・枚数制限なし
-            <br />
-            ・年齢制限イラストは不可
-            <br />
-            <br />
-            ご注意とお願い
-            <br />
-            ・色紙は必ず透明OPP袋に入れてください
-            <br />
-            ・一般参加総理/当日来場できない総理は、事前にヤマト運輸の宅急便で発送してください
-            <br />
-            <AspectRatio maxW="80%" my={6} mx="auto" ratio={1092 / 616}>
-              <AnchorLink href="/assets/img/event/invoice_kikaku.jpg">
-                <Image
-                  src="/assets/img/event/invoice_kikaku.jpg"
-                  alt="色紙発送用伝票"
-                  fill
-                />
-              </AnchorLink>
-            </AspectRatio>
-            ・サークル参加総理のみ、会場への直接持ち込みOKです。受付終了は12:00予定です
+            募集条件や宛先は後日お知らせします。
           </StyledCardSection>
           <StyledCardSection delay={delayCount++ / 10} title="ホワイトボード">
             こちらも毎回恒例のホワイトボード！
@@ -105,25 +76,13 @@ const Page: React.FC = () => {
           </StyledCardSection>
         </Card>
         <Card title={<Card.Title>アフターイベント</Card.Title>}>
-          <StyledCardSection
-            delay={delayCount++ / 10}
-            title="オンリーイベントでオンリー総理を探せ！"
-          >
-            毎年多種多様な総理たちが集うソクバイ海。多くの総理がいるオンリー会場の中で、一人しかいない個性の総理を探しましょう！
+          <StyledCardSection delay={delayCount++ / 10} title="">
+            即売会パートの後に開催予定！
             <br />
-            予め会場内の総理たちに総理の特徴を一つ書いてもらい、その中から書いて貰った特徴を持つ総理がいらっしゃるか聞いていきます。
+            企画詳細は後日お知らせします。
             <br />
-            特徴を持つ総理がオンリー会場に一人だけだった場合、一人だけの総理を当てた側と当てられた側の二名には景品をプレゼント！
-          </StyledCardSection>
-          <StyledCardSection
-            delay={delayCount++ / 10}
-            title="再復刻&nbsp;政マニアック！クイズ大会！"
-          >
-            二度あることは三度ある！&nbsp;智で智を洗え！&nbsp;政マニに関するクイズ大会！
             <br />
-            アフター全員参加の○×クイズ大会です。こちらも最後まで残った一人には豪華景品をプレゼント。
-            <br />
-            政マニに関する復習をして、目指せ！クイズ王総理！
+            and more……? ﾀﾞｽ
           </StyledCardSection>
         </Card>
       </Flex>
