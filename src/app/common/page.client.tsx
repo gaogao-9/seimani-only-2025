@@ -63,16 +63,18 @@ const Page: React.FC = () => {
             一般参加を予定される総理の皆さんは、下記の諸注意をお読みいただいた上でご参加ください。
             <br />
             なお、ご不明な点がございましたら、お気軽に主催メールアドレス宛にお問い合わせください。
+            <br />
+            問い合わせ先は本ページ最下部などに記載されています。
           </StyledCardSection>
           <StyledCardSection delay={delayCount++ / 10} title="イベント名">
             政剣マニフェスティアオンリー同人誌即売会
             <br />
-            緊急交流イベント「漕ぎ出せ！ソクバイ海Ⅶ」
+            緊急交流イベント「漕ぎ出せ！ソクバイ海Ⅷ」
             <br />
-            #アイムソウリー2024
+            #アイムソウリー2025
           </StyledCardSection>
           <StyledCardSection delay={delayCount++ / 10} title="日程・会場">
-            2024年9月15日（日曜日）
+            2025年9月14日（日曜日）
             <br />
             ハイライフプラザいたばし
           </StyledCardSection>
@@ -107,16 +109,19 @@ const Page: React.FC = () => {
                   <Table.Cell>【アフターイベント】開始</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell>18:00</Table.Cell>
-                  <Table.Cell>【更衣室】閉鎖</Table.Cell>
+                  <Table.Cell>16:30</Table.Cell>
+                  <Table.Cell>【アフターイベント】終了</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                  <Table.Cell>20:00</Table.Cell>
-                  <Table.Cell>【会場】完全撤収</Table.Cell>
+                  <Table.Cell>18:00</Table.Cell>
+                  <Table.Cell>
+                    【更衣室】閉鎖
+                    <br />
+                    【会場】完全撤収
+                  </Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table.Root>
-            <br />
             <br />
             ※その他詳細スケジュールは後日お知らせします
             <br />
@@ -298,11 +303,7 @@ const Page: React.FC = () => {
         </Card>
         <Card title="一般参加チケット販売">
           <Card.Section title="">
-            <AnchorLink
-              href="https://t.livepocket.jp/e/seimani-only-7"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <AnchorLink href="" target="_blank" rel="noreferrer">
               <Button as="span" colorScheme="blue">
                 LivePocket&nbsp;イベントページ
               </Button>
