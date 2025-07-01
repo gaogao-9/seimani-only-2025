@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
-import { AspectRatio, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { Card } from "@/components/Card";
-import { AnchorLink } from "@/components/AnchorLink";
 
 const TextFadeIn = keyframes`
   0% {
