@@ -1,12 +1,11 @@
 "use client";
 
-import { Flex, Icon, Image, List, Wrap, WrapItem } from "@chakra-ui/react";
+import { Flex, Icon, List, Wrap, WrapItem } from "@chakra-ui/react";
 import { FaTrain, FaCompass, FaClock } from "react-icons/fa";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import { Card } from "@/components/Card";
 import { useEffect, useState } from "react";
-import { AnchorLink } from "@/components/AnchorLink";
 
 const TextFadeIn = keyframes`
   0% {
@@ -102,7 +101,7 @@ const Page: React.FC = () => {
                     <FaClock />
                   </Icon>
                   <span style={{ verticalAlign: "middle" }}>
-                    日程: 2024/09/15 (日)
+                    日程: 2025/09/14 (日)
                   </span>
                 </StyledListItem>
                 <List.Item>&nbsp;</List.Item>
@@ -134,6 +133,7 @@ const Page: React.FC = () => {
             </WrapItem>
           </Wrap>
         </Card>
+        {/*
         <Card title={<Card.Title>会場地図</Card.Title>}>
           <Card.Section title="">
             <AnchorLink href="/assets/img/map.png">
@@ -148,6 +148,7 @@ const Page: React.FC = () => {
             </AnchorLink>
           </Card.Section>
         </Card>
+        */}
       </Flex>
     </>
   );
