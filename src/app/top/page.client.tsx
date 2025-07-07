@@ -66,7 +66,7 @@ const ActorArea = styled.div`
 
 const Page: React.FC = () => {
   const topImageContext = useTopImageContext();
-  const [logoPosition, setLogoPosition] = useState<"bottom" | "left">("bottom");
+  const [logoPosition, setLogoPosition] = useState<"top" | "right">("top");
   const [[logoOffsetX, logoOffsetY], setLogoOffset] = useState<
     [number, number]
   >([0, 0]);
@@ -76,35 +76,35 @@ const Page: React.FC = () => {
     const canvasRatio = canvasSize.w / canvasSize.h;
     const positionThrethold = 1.2;
     const rightOffsetThrethold = 9;
-    const offsetPosition = canvasRatio > positionThrethold ? "left" : "bottom";
+    const offsetPosition = canvasRatio > positionThrethold ? "right" : "top";
 
     if (canvasRatio <= positionThrethold && canvasRatio >= imageRatio) {
       const offsetRate =
         (canvasRatio - imageRatio) / (positionThrethold - imageRatio);
 
       setLogoOffset([0, offsetRate * -0.12]);
-    } else if (offsetPosition === "bottom") {
-      // オフセット条件に当てはまらないがポジションがbottomの場合は0位置として更新
+    } else if (offsetPosition === "top") {
+      // オフセット条件に当てはまらないがポジションがtopの場合は0位置として更新
       setLogoOffset([0, 0]);
     }
 
     console.log(
-      offsetPosition === "left" && canvasRatio <= rightOffsetThrethold,
+      offsetPosition === "right" && canvasRatio <= rightOffsetThrethold,
       canvasRatio,
       rightOffsetThrethold,
     );
-    if (offsetPosition === "left" && canvasRatio <= rightOffsetThrethold) {
+    if (offsetPosition === "right" && canvasRatio <= rightOffsetThrethold) {
       const offsetRate =
         (rightOffsetThrethold - canvasRatio) /
         (rightOffsetThrethold - positionThrethold);
 
-      setLogoOffset([offsetRate * 1.12, offsetRate * -0.03]);
-    } else if (offsetPosition === "left") {
+      setLogoOffset([offsetRate * -0.1, offsetRate * -0.03]);
+    } else if (offsetPosition === "right") {
       // オフセット条件に当てはまらないがポジションがrightの場合は0位置として更新
       setLogoOffset([0, 0]);
     }
 
-    setLogoPosition(canvasRatio > positionThrethold ? "left" : "bottom");
+    setLogoPosition(canvasRatio > positionThrethold ? "right" : "top");
   }, []);
 
   const logoImageTransformStyle = useMemo(
@@ -225,7 +225,7 @@ const Page: React.FC = () => {
           portraitPositionY={0.5}
           imageWidth={originalLogoImageSize.w}
           imageHeight={originalLogoImageSize.h}
-          minimumHeightThretholdRate={220 / 100}
+          minimumHeightThretholdRate={350 / 100}
           minimumWidthThretholdRate={45 / 100}
           data-grid-area="logo"
           onResize={onResize}

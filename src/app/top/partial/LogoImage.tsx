@@ -18,7 +18,7 @@ const LogoInAnimation = keyframes`
 `;
 
 type LogoWrapperProps = {
-  position: "left" | "bottom";
+  position: "right" | "top";
   offsetX: number;
   offsetY: number;
 };
@@ -53,10 +53,9 @@ export const createLogoWrapperTransformStyle = ({
   offsetY,
 }: LogoWrapperProps) =>
   `translate(${
-    originalLogoImageSize.w *
-      ((position === "bottom" ? 0.5 : -0.82) + offsetX) -
+    originalLogoImageSize.w * ((position === "top" ? 0.5 : 0.85) + offsetX) -
     logoImageSize.w / 2
   }px, ${
-    originalLogoImageSize.h * ((position === "bottom" ? 0.8 : 0.25) + offsetY) -
+    originalLogoImageSize.h * ((position === "top" ? 0.18 : 0.29) + offsetY) -
     logoImageSize.h / 2
   }px)`;
