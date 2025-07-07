@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
+import { isMobile } from "react-device-detect";
 import { ImageWrapper } from "./ImageWrapper";
 
 const animationStartDelay = 1;
@@ -16,10 +17,15 @@ const FrontInAnimation = keyframes`
   }
 `;
 
-export const originalFrontImageSize = {
-  w: 3200,
-  h: 2266,
-} as const;
+export const originalFrontImageSize = !isMobile
+  ? ({
+      w: 3200,
+      h: 2266,
+    } as const)
+  : ({
+      w: 1200,
+      h: 850,
+    } as const);
 
 export const frontImageSize = originalFrontImageSize;
 

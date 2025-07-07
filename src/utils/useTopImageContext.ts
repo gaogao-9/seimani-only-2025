@@ -1,3 +1,4 @@
+import { isMobile } from "react-device-detect";
 import { createImageContext } from "@/utils/useImageContext";
 
 const imageNames = [
@@ -11,7 +12,10 @@ const imageNames = [
 ] as const;
 
 const { ImageContext, useImageContext, useImageContextValue } =
-  createImageContext(imageNames, (imageName) => `/assets/img/top/${imageName}`);
+  createImageContext(
+    imageNames,
+    (imageName) => `/assets/img/top/${isMobile ? "m_" : ""}${imageName}`,
+  );
 
 export {
   ImageContext as TopImageContext,

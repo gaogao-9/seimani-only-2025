@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
+import { isMobile } from "react-device-detect";
 import { ImageWrapper } from "./ImageWrapper";
 
 const animationStartDelay = 1.9;
@@ -26,10 +27,15 @@ const PuriInAnimation = keyframes`
   }
 `;
 
-export const originalPuriImageSize = {
-  w: 3200,
-  h: 2266,
-} as const;
+export const originalPuriImageSize = !isMobile
+  ? ({
+      w: 3200,
+      h: 2266,
+    } as const)
+  : ({
+      w: 1200,
+      h: 850,
+    } as const);
 
 export const puriImageSize = originalPuriImageSize;
 
