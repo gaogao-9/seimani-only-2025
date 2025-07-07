@@ -311,7 +311,7 @@ const Page: React.FC = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <Button as="span" colorScheme="blue">
+              <Button as="span" colorPalette="purple">
                 LivePocket&nbsp;イベントページ(サークル参加者向け)
               </Button>
             </AnchorLink>
