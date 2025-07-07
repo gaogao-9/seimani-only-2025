@@ -47,6 +47,14 @@ import {
   FrontImageWrapper,
   originalFrontImageSize,
 } from "./partial/FrontImage";
+import {
+  createLogoWrapperTransformStyle,
+  LogoImage,
+  logoImageSize,
+  LogoImageWrapper,
+  originalLogoImageSize,
+} from "./partial/LogoImage";
+import { useCallback, useMemo, useState } from "react";
 
 const ActorArea = styled.div`
   display: grid;
@@ -58,6 +66,57 @@ const ActorArea = styled.div`
 
 const Page: React.FC = () => {
   const topImageContext = useTopImageContext();
+  const [logoPosition, setLogoPosition] = useState<"bottom" | "left">("bottom");
+  const [[logoOffsetX, logoOffsetY], setLogoOffset] = useState<
+    [number, number]
+  >([0, 0]);
+
+  const onResize = useCallback((canvasSize: { w: number; h: number }) => {
+    const imageRatio = logoImageSize.w / logoImageSize.h;
+    const canvasRatio = canvasSize.w / canvasSize.h;
+    const positionThrethold = 1.2;
+    const rightOffsetThrethold = 9;
+    const offsetPosition = canvasRatio > positionThrethold ? "left" : "bottom";
+
+    if (canvasRatio <= positionThrethold && canvasRatio >= imageRatio) {
+      const offsetRate =
+        (canvasRatio - imageRatio) / (positionThrethold - imageRatio);
+
+      setLogoOffset([0, offsetRate * -0.12]);
+    } else if (offsetPosition === "bottom") {
+      // オフセット条件に当てはまらないがポジションがbottomの場合は0位置として更新
+      setLogoOffset([0, 0]);
+    }
+
+    console.log(
+      offsetPosition === "left" && canvasRatio <= rightOffsetThrethold,
+      canvasRatio,
+      rightOffsetThrethold,
+    );
+    if (offsetPosition === "left" && canvasRatio <= rightOffsetThrethold) {
+      const offsetRate =
+        (rightOffsetThrethold - canvasRatio) /
+        (rightOffsetThrethold - positionThrethold);
+
+      setLogoOffset([offsetRate * 1.12, offsetRate * -0.03]);
+    } else if (offsetPosition === "left") {
+      // オフセット条件に当てはまらないがポジションがrightの場合は0位置として更新
+      setLogoOffset([0, 0]);
+    }
+
+    setLogoPosition(canvasRatio > positionThrethold ? "left" : "bottom");
+  }, []);
+
+  const logoImageTransformStyle = useMemo(
+    () => ({
+      transform: createLogoWrapperTransformStyle({
+        position: logoPosition,
+        offsetX: logoOffsetX,
+        offsetY: logoOffsetY,
+      }),
+    }),
+    [logoPosition, logoOffsetX, logoOffsetY],
+  );
 
   return (
     <>
@@ -155,6 +214,35 @@ const Page: React.FC = () => {
                 />
               </FrontImageWrapper>
             </>
+          )}
+        </ResponsiveImage>
+        <ResponsiveImage
+          rectWidth="100%"
+          rectHeight={["calc(100vh - 60px)", "calc(100dvh - 60px)"]}
+          landscapePositionX={0.5}
+          landscapePositionY={0.2}
+          portraitPositionX={0.5}
+          portraitPositionY={0.5}
+          imageWidth={originalLogoImageSize.w}
+          imageHeight={originalLogoImageSize.h}
+          minimumHeightThretholdRate={220 / 100}
+          minimumWidthThretholdRate={45 / 100}
+          data-grid-area="logo"
+          onResize={onResize}
+        >
+          {topImageContext.loaded && (
+            <LogoImageWrapper
+              width={originalLogoImageSize.w}
+              height={originalLogoImageSize.h}
+            >
+              <LogoImage
+                src={topImageContext.images["logo.png"]}
+                width={logoImageSize.w}
+                height={logoImageSize.h}
+                style={logoImageTransformStyle}
+                alt="ロゴ"
+              />
+            </LogoImageWrapper>
           )}
         </ResponsiveImage>
         <Whiteout className={topImageContext.loaded ? "loaded" : ""} />

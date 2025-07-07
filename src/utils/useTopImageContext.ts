@@ -9,6 +9,7 @@ const imageNames = [
   "front_snack.png",
   "back_snack.png",
   "eye.png",
+  "logo.png",
 ] as const;
 
 const { ImageContext, useImageContext, useImageContextValue } =
