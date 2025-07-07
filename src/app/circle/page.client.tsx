@@ -306,7 +306,11 @@ const Page: React.FC = () => {
         </Card>
         <Card title="サークル参加チケット販売">
           <Card.Section title="">
-            <AnchorLink href="" target="_blank" rel="noreferrer">
+            <AnchorLink
+              href="https://t.livepocket.jp/e/4h6uin"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button as="span" colorScheme="blue">
                 LivePocket&nbsp;イベントページ(サークル参加者向け)
               </Button>

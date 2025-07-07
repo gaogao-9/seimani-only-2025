@@ -303,7 +303,11 @@ const Page: React.FC = () => {
         </Card>
         <Card title="一般参加チケット販売">
           <Card.Section title="">
-            <AnchorLink href="" target="_blank" rel="noreferrer">
+            <AnchorLink
+              href="https://t.livepocket.jp/e/seimani-only-8"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button as="span" colorScheme="blue">
                 LivePocket&nbsp;イベントページ
               </Button>
