@@ -77,7 +77,7 @@ export const TwoWayLayoutBase: React.FC<TwoWayLayoutBaseProps> = ({
             <IconButton
               aria-label="ページ内リンクメニューを表示"
               onClick={onOpen}
-              backgroundColor="purple.500"
+              backgroundColor="purple.400"
             >
               <GiHamburgerMenu />
             </IconButton>
