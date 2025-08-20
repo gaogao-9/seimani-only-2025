@@ -1,11 +1,12 @@
 "use client";
 
-import { Flex, Icon, List, Wrap, WrapItem } from "@chakra-ui/react";
+import { Flex, Icon, List, Wrap, WrapItem, Image } from "@chakra-ui/react";
 import { FaTrain, FaCompass, FaClock } from "react-icons/fa";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import { Card } from "@/components/Card";
 import { useEffect, useState } from "react";
+import { AnchorLink } from "@/components/AnchorLink";
 
 const TextFadeIn = keyframes`
   0% {
@@ -141,6 +142,7 @@ const Page: React.FC = () => {
             </AnchorLink>
           </Card.Section>
         </Card>
+        */}
         <Card title={<Card.Title>サークルリスト</Card.Title>}>
           <Card.Section title="">
             <AnchorLink href="/assets/img/circlelist.png">
@@ -148,7 +150,6 @@ const Page: React.FC = () => {
             </AnchorLink>
           </Card.Section>
         </Card>
-        */}
       </Flex>
     </>
   );

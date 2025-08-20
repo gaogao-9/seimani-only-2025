@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
-import { Flex } from "@chakra-ui/react";
+import { AspectRatio, Flex, Image } from "@chakra-ui/react";
 import { Card } from "@/components/Card";
+import { AnchorLink } from "@/components/AnchorLink";
 
 const TextFadeIn = keyframes`
   0% {
@@ -65,7 +66,23 @@ const Page: React.FC = () => {
             <br />
             当日どうしても参加できない総理もぜひご参加ください。
             <br />
-            募集条件や宛先は後日お知らせします。
+            <br />
+            <AspectRatio maxW="80%" my={6} mx="auto" ratio={2480 / 3508}>
+              <AnchorLink href="/assets/img/event/shikishi_info.jpg">
+                <Image
+                  alt="色紙募集要項"
+                  src="/assets/img/event/shikishi_info.jpg"
+                />
+              </AnchorLink>
+            </AspectRatio>
+            <AspectRatio maxW="80%" my={6} mx="auto" ratio={1092 / 616}>
+              <AnchorLink href="/assets/img/event/shikishi_invoice.jpg">
+                <Image
+                  src="/assets/img/event/shikishi_invoice.jpg"
+                  alt="色紙発送用伝票"
+                />
+              </AnchorLink>
+            </AspectRatio>
           </StyledCardSection>
           <StyledCardSection delay={delayCount++ / 10} title="ホワイトボード">
             こちらも毎回恒例のホワイトボード！
