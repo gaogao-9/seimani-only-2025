@@ -91,13 +91,21 @@ const Page: React.FC = () => {
           </StyledCardSection>
         </Card>
         <Card title={<Card.Title>アフターイベント</Card.Title>}>
-          <StyledCardSection delay={delayCount++ / 10} title="">
-            即売会パートの後に開催予定！
+          <StyledCardSection delay={delayCount++ / 10} title="政マニ川柳大賞">
+            政マニと言えば、ネーミングを始めとした数々の言葉遊び。
             <br />
-            企画詳細は後日お知らせします。
+            そこで今回は、政マニならではの言葉遊びを絡めた川柳を大募集！
             <br />
+            川柳は会場に掲示、参加者投票を実施して、最多得票のものを政マニ川柳大賞に！
             <br />
-            and more……? ﾀﾞｽ
+            大賞の川柳を詠んだ総理には景品をプレゼントします。集え、くすりと笑える政マニ川柳！
+          </StyledCardSection>
+          <StyledCardSection delay={delayCount++ / 10} title="政霊ビンゴ">
+            同人イベントのアフターと言えば定番はビンゴ？&nbsp;ソクバイ海のビンゴはただのビンゴじゃない！
+            <br />
+            数字の代わりに政霊の名前でビンゴ大会を行います。
+            <br />
+            配布される空欄のビンゴカードに政霊の名前を思い出したり調べたりして書き込み、自分だけのビンゴカードで最速ビンゴを目指しましょう！
           </StyledCardSection>
         </Card>
       </Flex>
