@@ -88,11 +88,6 @@ const Page: React.FC = () => {
       setLogoOffset([0, 0]);
     }
 
-    console.log(
-      offsetPosition === "right" && canvasRatio <= rightOffsetThrethold,
-      canvasRatio,
-      rightOffsetThrethold,
-    );
     if (offsetPosition === "right" && canvasRatio <= rightOffsetThrethold) {
       const offsetRate =
         (rightOffsetThrethold - canvasRatio) /
