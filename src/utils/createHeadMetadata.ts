@@ -5,10 +5,10 @@ export const createHeadMetadata = (pathname: string): Metadata => {
   const route = routes.find((x) => x.pathname === pathname);
   const title =
     "政剣マニフェスティアオンリー同人誌即売会 緊急交流イベント 漕ぎ出せ！ソクバイ海Ⅷ";
-  const subTitle = route?.pathname === "/top" ? "" : route?.title ?? "";
+  const subTitle = route?.pathname === "/top" ? "" : (route?.title ?? "");
   const fullTitle = subTitle ? `${title} | ${subTitle}` : title;
   const description = `${title}の公式サイトです`;
-  const origin = "https://festia.moe";
+  const origin = "https://only2025.festia.moe";
   const ogpImage = `${origin}/ogp_icon.jpg?only2025`;
 
   return {
